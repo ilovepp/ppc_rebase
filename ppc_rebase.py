@@ -58,7 +58,7 @@ def get_arrow_addr_list(filename):
 	i=0
 	Record = False
 	while i<len(diff_list):
-		Valid = diff_list[i] < 4096 # the max num of a string,can choose othe num
+		Valid = diff_list[i] < 4096 # the max num of a string,can choose another num
 		if Record:
 			if Valid:
 				L[index].append(diff_list[i])
@@ -102,7 +102,7 @@ inputFile=sys.argv[1]
 if not os.path.isfile(inputFile):
 	print "Error:file not exist!"
 	Usage()
-step = 0x400 # memory align,can choose other num
+step = 0x400 # memory align,can choose another num
 target_addr_list = get_target_addr_list(inputFile)
 target_addr_set = set(target_addr_list)
 arrow_addr_list = get_arrow_addr_list(inputFile)
